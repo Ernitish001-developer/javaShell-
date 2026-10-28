@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaShell | Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <h2>⚡ JavaShell</h2>
+
+        <nav>
+            <button class="nav-btn active" data-view="terminal">
+                ⌨️ Terminal
+            </button>
+
+            <button class="nav-btn" data-view="files">
+                📁 File Manager
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            Local Java Backend
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1 id="pageTitle">Terminal</h1>
+                <p>JavaShell Command Interface</p>
+            </div>
+
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                <span id="sessionStatus">Connected</span>
+            </div>
+        </header>
+
+        <section class="stats">
+            <article class="stat-card">
+                <span>Commands Run</span>
+                <strong id="commandCount">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Current Directory</span>
+                <strong id="currentPath">workspace</strong>
+            </article>
+
+            <article class="stat-card">
+                <span>Backend</span>
+                <strong>Java</strong>
+            </article>
+        </section>
+
+        <section id="terminalView" class="panel">
+            <div class="panel-heading">
+                <h2>Terminal Console</h2>
+
+                <button id="clearButton" class="secondary-btn">
+                    Clear
+                </button>
+            </div>
+
+            <div class="terminal-window">
+                <div class="terminal-top">
+                    <div class="window-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <span>JavaShell Terminal</span>
+                </div>
+
+                <div id="terminal" class="terminal-output"></div>
+
+                <form id="commandForm" class="command-form">
+                    <label for="command" class="prompt">$</label>
+
+                    <input
+                        id="command"
+                        type="text"
+                        placeholder="Type a command..."
+                        autocomplete="off"
+                        spellcheck="false"
+                        required
+                    >
+
+                    <button id="runButton" type="submit">
+                        Run
+                    </button>
+                </form>
+            </div>
+
+            <div class="quick-commands">
+                <h3>Quick Commands</h3>
+
+                <button data-command="help">help</button>
+                <button data-command="pwd">pwd</button>
+                <button data-command="dir">dir</button>
+                <button data-command="date">date</button>
+                <button data-command="whoami">whoami</button>
+            </div>
+        </section>
+
+        <section id="filesView" class="panel hidden">
+            <div class="panel-heading">
+                <h2>File Manager</h2>
+
+                <button id="refreshFiles" class="secondary-btn">
+                    Refresh
+                </button>
+            </div>
+
+            <p class="muted">
+                Files inside your JavaShell workspace.
+            </p>
+
+            <div id="fileList" class="file-list">
+                <p>Click Refresh to load files.</p>
+            </div>
+
+            <div class="file-help">
+                <p><code>mkdir projects</code> — create a folder</p>
+                <p><code>create notes.txt</code> — create a file</p>
+                <p><code>cat notes.txt</code> — read a file</p>
+                <p><code>cd projects</code> — change directory</p>
+            </div>
+        </section>
+
+        <section class="panel history-panel">
+            <div class="panel-heading">
+                <h2>Command History</h2>
+
+                <button id="clearHistory" class="secondary-btn">
+                    Clear History
+                </button>
+            </div>
+
+            <ol id="historyList" class="history-list"></ol>
+        </section>
+
+        <footer>
+            JavaShell • Built with Java, HTML, CSS and JavaScript
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+<!-- Welcome Screen -->
+<section id="welcome-screen" class="welcome-screen">
+
+    <div class="welcome-content">
+
+        <div class="welcome-icon">⌘</div>
+
+        <p class="welcome-tag">DEVELOPER ENVIRONMENT</p>
+
+        <h1>
+            Welcome to
+            <span>JavaShell</span>
+        </h1>
+
+        <p class="welcome-description">
+            A modern web-based command interface
+            powered by Java.
+        </p>
+
+        <div class="welcome-status">
+            <span class="status-dot"></span>
+            Ready to launch
+        </div>
+
+        <button id="get-started" class="start-button">
+            Get Started <span>→</span>
+        </button>
+
+        <p class="welcome-footer">
+            JAVA • TERMINAL • INNOVATION
+        </p>
+
+    </div>
+
+</section>
+</html>
